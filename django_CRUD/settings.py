@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+import pyodbc
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    'employees_CRUD',
 ]
 
 MIDDLEWARE = [
@@ -75,9 +78,15 @@ WSGI_APPLICATION = 'django_CRUD.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
+        'ENGINE': 'sql_server.pyodbc', # Engine a utilizar, en este caso SQL Server con pyodbc
+        'NAME': 'employees_CRUD', # Nombre de la base de datos
+        'USER': 'apiManager', # Usuario de la base de datos
+        'PASSWORD': 'Admin100Sq!!', # Contraseña del usuario
+        'HOST': 'MASTERPC\EMPLOYEES', # Nombre del servidor
+        'OPTIONS': {
+            'driver': 'ODBC Driver 13 for SQL Server', # Driver a utilizar
+        },
+    },
 }
 
 
