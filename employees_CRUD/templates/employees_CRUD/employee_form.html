@@ -1,5 +1,9 @@
 {% extends "employees_CRUD/base.html" %}
 
 {% block content %}
-<p> Welcome to the employee form </p>
+
+<form action = "", method="post", autocomplete="off">
+    {% csrf_token %}
+    {{form}} <!-- Se agrega la variable que contiene el formulario -->
+</form>
 {% endblock content %}
