@@ -6,4 +6,11 @@ class employeeForm(forms.ModelForm):
     # class Meta: Se utiliza para definir los atributos de la clase "employeeForm".
     class Meta:
         model = Employee # Se define el modelo que utilizará la clase "employeeForm".
-        fields = '__all__' # Se definen los campos que utilizará la clase "employeeForm", en este caso, todos los campos del modelo "Employee".
+        fields = ('empFirtsName', 'empLastName', 'empCode', 'empPhoneNum', 'empEmail', 'empPosition') # Se definen los campos que utilizará la clase "employeeForm", en este caso, todos los campos del modelo "Employee".
+        labels = {
+            'empFirtsName': 'Nombre',
+            'empLastName': 'Apellidos',
+            'empCode': 'Código de empleado',
+            'empPhoneNum': 'Número de teléfono',
+            'empEmail': 'Correo electrónico',
+            'empPosition': 'Puesto de trabajo'} # Se definen los labels que utilizará la clase "employeeForm", en este caso, todos los labels del modelo "Employee".

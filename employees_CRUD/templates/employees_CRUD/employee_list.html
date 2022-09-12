@@ -2,5 +2,45 @@
 {% extends "employees_CRUD/base.html" %} 
 
 {% block content %}
-<p> Welcome to the employee list </p>
+<!-- Etiqueta "table", la cual se encarga de coemnzar un apartado de tabla -->
+    <table class="table table-sm">
+        <!-- Etiqueta "thead",  -->
+        <thead class="border-bottom font-weight-bold">
+            <!-- Etiqueta "tr", la cual se emplea para definir cada fila de la tabla -->
+            <tr>
+                <!-- Etiqueta "td", la cual se emplea para definir las cabeceras de una fila o de una columna de la tabla -->
+                <td>Nombre</td>
+                <td>Apellidos</td>
+                <td>Código de empleado</td>
+                <td>Número de teléfono</td>
+                <td>Correo electrónico</td>
+                <td>Puesto de trabajo</td>
+                <td>Fecha de registro</td>
+                <td></td>
+            </tr>
+        </thead>
+
+        <!-- Etiqueta "tbody", la cual se emplea para definir el cuerpo de la tabla -->
+        <tbody>
+            <!-- Etiqueta "for", la cual se emplea para iterar sobre una lista de objetos -->
+            {% for employee in employee_list %}
+                <!-- Etiqueta "tr", la cual se emplea para definir cada fila de la tabla -->
+                <tr>
+                    <td>{{ employee.empFirtsName }}</td>
+                    <td>{{ employee.empLastName }}</td>
+                    <td>{{ employee.empCode }}</td>
+                    <td>{{ employee.empPhoneNum }}</td>
+                    <td>{{ employee.empEmail }}</td>
+                    <td>{{ employee.empPosition }}</td>
+                    <td>{{ employee.empRegisterDate }}</td>
+                    <!-- Se agrega un botón que se encargará de redireccionar al usuario a la página de "actualizar datos" -->
+                    <td>
+                        <a href="{% url 'employee_update' employee.id %}" class="btn text-secondary px-8">
+                            <i class="far fa-edit fa-lg"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock content %}

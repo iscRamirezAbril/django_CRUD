@@ -9,6 +9,9 @@ from django.db import models # De django.db importa models
 class Position(models.Model): # Del módulo models, importamos la clase Model
     posTitle = models.CharField(max_length=50) # Campo que almacenará el nombre del puesto de trabajo
 
+    def __str__ (self):
+        return self.posTitle
+    
 # |-----| CLASE #2: Employee |-----|
 # Clase que almacenará los datos de los empleados
 class Employee(models.Model): # Del módulo models, importamos la clase Model

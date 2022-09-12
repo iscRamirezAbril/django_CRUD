@@ -1,9 +1,40 @@
 {% extends "employees_CRUD/base.html" %}
+{% load crispy_forms_tags %} 
 
 {% block content %}
 
 <form action = "", method="post", autocomplete="off">
     {% csrf_token %}
-    {{form}} <!-- Se agrega la variable que contiene el formulario -->
+    <div class="row">
+        <div class="col-md-6">
+            {{form.empFirtsName|as_crispy_field}}
+        </div>
+
+        <div class="col-md-6">
+            {{form.empLastName|as_crispy_field}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            {{form.empCode|as_crispy_field}}
+        </div>
+
+        <div class="col-md-6">
+            {{form.empPhoneNum|as_crispy_field}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            {{form.empEmail|as_crispy_field}}
+        </div>
+
+        <div class="col-md-6">
+            {{form.empPosition|as_crispy_field}}
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-success">Registrar</button>
 </form>
 {% endblock content %}

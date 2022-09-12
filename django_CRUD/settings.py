@@ -40,7 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'employees_CRUD',
+    
+    'crispy_forms', # Paquete que se instala para usar bootstrap en los formularios
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4' # Paquete que se instala para usar bootstrap en los formularios
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
