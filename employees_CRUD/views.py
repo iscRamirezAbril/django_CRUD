@@ -38,6 +38,7 @@ def employee_form(request, id = 0):
         return redirect('/employees/list/')
             
 # Función de vista que se encargará de eliminar un empleado
-def employee_delete(request):
-    return 
-
+def employee_delete(request, id): # Se recibe como parámetro el ID del empleado que se desea eliminar
+    employee = Employee.objects.get(pk=id) # Se obtiene el empleado que se desea modificar mediante el ID (llaave primaria)
+    employee.delete() # Se elimina el empleado
+    return redirect('/employees/list/') # Se procede a redireccionar al usuario a la página de la lista de empleados (localhost:8000/employees/list/)

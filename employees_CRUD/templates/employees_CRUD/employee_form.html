@@ -35,6 +35,15 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-success">Registrar</button>
+    <div class="row">
+        <div class="col-md-6">
+            <button type="submit" class="btn btn-success">Registrar</button>
+        </div>
+
+        <div class="col-md-6">
+            <a href="{% url 'employee_list' %}" type="submit" class="btn btn-outline-secondary">Regresar</a>
+        </div>
+    </div>
+
 </form>
 {% endblock content %}

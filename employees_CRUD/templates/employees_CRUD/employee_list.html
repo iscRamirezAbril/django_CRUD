@@ -16,7 +16,11 @@
                 <td>Correo electrónico</td>
                 <td>Puesto de trabajo</td>
                 <td>Fecha de registro</td>
-                <td></td>
+                <td>
+                    <a href="{% url 'employee_insert' %}" class="btn btn-outline-success">
+                        <i class="fas fa-plus"></i> Add
+                    </a>
+                </td>
             </tr>
         </thead>
 
@@ -38,6 +42,10 @@
                         <a href="{% url 'employee_update' employee.id %}" class="btn text-secondary px-8">
                             <i class="far fa-edit fa-lg"></i>
                         </a>
+
+                        <a href="{% url 'employee_delete' employee.id %}" class="btn text-danger px-8">
+                            <i class="far fa-trash-alt fa-lg"></i>
+
                     </td>
                 </tr>
             {% endfor %}
